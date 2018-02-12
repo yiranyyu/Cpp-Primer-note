@@ -1,0 +1,1 @@
+take some note while reading C++ primer
