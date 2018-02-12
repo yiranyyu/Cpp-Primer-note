@@ -27,6 +27,15 @@
     <ClInclude Include="Sales_item.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Sales_data.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tools.cpp">
@@ -50,27 +59,18 @@
     <ClCompile Include="Chapter2_Sample.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Sales_data.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Person.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Sales_item.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="..\otherSrc\Sales_item.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="..\otherSrc\Sales_item_100.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="..\otherSrc\Sales_item_1000_same.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="..\otherSrc\Sales_item_10000_moreLessRandom.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="..\otherSrc\Sales_item_10000_random.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="..\otherSrc\Sales_item_1000000_random.txt">
+    <Text Include="sales_data.txt">
       <Filter>资源文件</Filter>
     </Text>
   </ItemGroup>
