@@ -39,12 +39,6 @@ Sales_data& Sales_data::combine(const Sales_data & that)
     return *this;
 }
 
-double Sales_data::avg_price() const noexcept
-{
-    if (sold_number == 0) return 0;
-    return revenue / sold_number;
-}
-
 Sales_data add(const Sales_data & lhs, const Sales_data & rhs)
 {
     Sales_data temp = lhs;
