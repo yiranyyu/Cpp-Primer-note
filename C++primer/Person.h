@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
-
+#include <iosfwd>
 class Person
 {
     friend std::istream& operator>>(std::istream &in, Person &p);
 public:
-    Person(const std::string &_name);
+    explicit Person(const std::string &_name);
     Person(const std::string &_name, const std::string &_address);
     Person(const Person&) = delete;
 public:
