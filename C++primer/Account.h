@@ -3,14 +3,14 @@
 class Account
 {
 public:
-    static constexpr double rate() noexcept;
+    static double rate() noexcept;
     static void setRate(double _rate) noexcept;
 private:
     static double INTEREST_RATE;
     static constexpr double initRate() noexcept;
 public:
     Account();
-    Account(const std::string &_owner);
+    explicit Account(const std::string &_owner);
     Account(const std::string &_owner, double _amount);
     ~Account();
 

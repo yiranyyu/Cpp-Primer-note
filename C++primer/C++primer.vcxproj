@@ -89,13 +89,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>G:\Stuff\boost_1_66_0;G:\Stuff\boost_1_66_0\libs;G:\Stuff\boost_1_66_0\bin.v2;G:\Stuff\boost_1_66_0\stage\lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0\bin.v2;G:\Tools\boost_1_66_0\stage\lib;G:\Tools\boost_1_66_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>G:\Stuff\boost_1_66_0\libs;G:\Stuff\boost_1_66_0\stage\lib;G:\Stuff\boost_1_66_0\bin.v2</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0\stage\lib;G:\Tools\boost_1_66_0\bin.v2</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -113,19 +113,21 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Stuff\boost_1_66_0;G:\Stuff\boost_1_66_0\libs;G:\Stuff\boost_1_66_0\bin.v2;G:\Stuff\boost_1_66_0\stage\lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>G:\Stuff\boost_1_66_0\libs;G:\Stuff\boost_1_66_0\stage\lib;G:\Stuff\boost_1_66_0\bin.v2</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="Blob.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="FileAnalysis.h" />
     <ClInclude Include="IO_error.h" />
@@ -161,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Blob.cpp" />
     <ClCompile Include="C++primer.cpp" />
     <ClCompile Include="Chapter2_Sample.cpp" />
     <ClCompile Include="Debug.cpp" />

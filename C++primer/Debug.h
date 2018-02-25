@@ -3,9 +3,8 @@ class Debug
 {
 public:
     Debug();
-    ~Debug();
-    
-    constexpr bool any();
+
+    bool any();
     
     void setIOError(bool isError);
     void setHardewareError(bool isError);
@@ -17,7 +16,7 @@ private:
     bool otherError;
 };
 
-constexpr bool Debug::any()
+bool Debug::any()
 {
     return hardwareError || IOError || otherError;
 }

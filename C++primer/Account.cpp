@@ -3,7 +3,7 @@
 
 double Account::INTEREST_RATE = initRate();
 
-constexpr double Account::rate() noexcept
+double Account::rate() noexcept
 {
     return INTEREST_RATE;
 }

@@ -9,7 +9,7 @@ using namespace std;
 
 const std::string FileAnalysis::NOT_EXIST = " not exist";
 
-auto FileAnalysis::analysisFile(const std::string & filePath)
+FileAnalysis::FileData FileAnalysis::analysisFile(const std::string &filePath)
 {
     ifstream file(filePath);
     if (!file)
@@ -28,7 +28,7 @@ auto FileAnalysis::analysisFile(const std::string & filePath)
     }
     cout << "In file ";
     cout << setw(40) << boost::filesystem::path(filePath).filename().string();
-    printf("%6d lines %8d words %10d chars\n", data.lines, data.words, data.chars);
+    printf("%6zd lines %8zd words %10zd chars\n", data.lines, data.words, data.chars);
     return data;
 }
 

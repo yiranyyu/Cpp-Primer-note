@@ -2,11 +2,4 @@
 #include "Debug.h"
 
 
-Debug::Debug()
-{
-}
-
-
-Debug::~Debug()
-{
-}
+Debug::Debug() = default;

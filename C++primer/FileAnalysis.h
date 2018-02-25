@@ -3,6 +3,13 @@
 #include <iosfwd>
 class FileAnalysis
 {
+public:
+    struct FileData
+    {
+        size_t lines = 0;
+        size_t words = 0;
+        size_t chars = 0;
+    };
 private:
     constexpr static int EXIST      = 0;
     constexpr static int EXECUTABLE = 1;
@@ -13,15 +20,7 @@ public:
     FileAnalysis() = delete;
     ~FileAnalysis() = delete;
 
-    static auto analysisFile(const std::string &filePath);
+    static FileAnalysis::FileData analysisFile(const std::string &filePath);
     static int analysisDirectory(const std::string &directoryPath);
-
-    static struct FileData
-    {
-        size_t lines = 0;
-        size_t words = 0;
-        size_t chars = 0;
-    };
-
 };
 
