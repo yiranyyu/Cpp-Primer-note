@@ -3,9 +3,11 @@
 #include <vector>
 #include <exception>
 #include <initializer_list>
+#include "BlobPtr.h"
 template<typename Val>
 class Blob
 {
+    friend class BlobPtr<Val>;
 public:
     using value_type = Val;
     using reference = value_type&;
@@ -15,8 +17,10 @@ public:
     using size_type = typename std::vector<value_type>::size_type;
 public:
     Blob();
-    template<typename Other>
+    template <typename Other>
     Blob(const Blob<Other> &that);
+    template <typename Other>
+    Blob& operator=(const Blob<Other> &that);
     Blob(std::initializer_list<Val> il);
     ~Blob() = default;
 
@@ -60,7 +64,8 @@ Blob<Val>::back() const
 
 template<typename Val>
 inline
-Blob::size_type Blob<Val>::size() const noexcept
+typename Blob<Val>::size_type
+Blob<Val>::size() const noexcept
 {
     value->size();
 }
@@ -74,7 +79,8 @@ bool Blob<Val>::empty() const noexcept
 
 template<typename Val>
 inline
-reference Blob<Val>::front()
+typename Blob<Val>::reference
+Blob<Val>::front()
 {
     checkNotEmpty();
     return value->front();
@@ -98,7 +104,8 @@ Blob<Val>::back()
 }
 
 template<typename Val>
-const_reference Blob<Val>::front() const
+typename Blob<Val>::const_reference
+Blob<Val>::front() const
 {
     checkNotEmpty();
     return value->front();
@@ -117,4 +124,11 @@ void Blob<Val>::pop_back()
 {
     checkNotEmpty();
     value->pop_back();
+}
+
+template<typename Val>
+template<typename Other>
+Blob<Val>& Blob<Val>::operator=(const Blob<Other> &that)
+{
+    this->value = that.value;
 }

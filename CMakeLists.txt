@@ -50,7 +50,11 @@ add_executable(C__primer
 #        C++primer/FileAnalysis.h
         C++primer/IO_error.cpp
         C++primer/IO_error.h
+        C++primer/QueryResult.h
+        C++primer/QueryResult.cpp
+        C++primer/TextQuery.cpp
+        C++primer/TextQuery.h
         C++primer/Blob.h
-        C++primer/Blob.cpp
-        "Note/Defining Abstract Data Types.cpp")
+        "Note/Dynamic Memory.cpp"
+        "Note/Defining Abstract Data Types.cpp" C++primer/BlobPtr.h)
 target_link_libraries (C__primer ${Boost_LIBRARIES})

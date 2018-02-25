@@ -54,6 +54,15 @@
     <ClInclude Include="Blob.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BlobPtr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TextQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tools.cpp">
@@ -101,7 +110,10 @@
     <ClCompile Include="IO_error.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Blob.cpp">
+    <ClCompile Include="TextQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="QueryResult.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

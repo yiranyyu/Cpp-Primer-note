@@ -1,28 +1,28 @@
 
 #include "stdafx.h"
 #include "Sales_data.h"
-#include "Screen.h"
-#include <string>
-#include "Account.h"
-#include "FileAnalysis.h"
-//#include <boost/filesystem.hpp>
 #include <iostream>
-#include <iterator>
-#include <list>
-#include <array>
-#include <sstream>
-#include <algorithm>
-#include <numeric>
-#include <functional>
-#include <iomanip>
-#include <memory>
 #include "Blob.h"
+//#include <boost/filesystem.hpp>
+// #include <boost/type_index.hpp>
+#include <fstream>
+#include "TextQuery.h"
 using namespace std;
 
+void finished();
+class C { const int a[3] = { 3, 3, 2 }; public:C() { } };
 int main()
 {
-
-    Blob<string> strBlob;
-    getchar();
+    C c{}
+    ;
+    C c2 = c;
+    C c3(c2);
+    finished();
     return 0;
+}
+
+void finished()
+{
+    cout << endl << "program finished";
+    //getchar();
 }
