@@ -26,6 +26,12 @@ public:
     Blob(std::initializer_list<Val> il);
     ~Blob() = default;
 
+    bool operator==(const Blob<Val> &that);
+    bool operator!=(const Blob<Val> &that);
+    bool operator<(const Blob<Val> &that);
+    bool operator>(const Blob<Val> &that);
+    Val& operator[](size_t index);
+    const Val& operator[](size_t index) const;
     bool empty() const noexcept;
     size_type size() const noexcept;
     reference front();
@@ -48,7 +54,11 @@ inline Blob<Val>::Blob(const Blob<Other>& that)
 
 template<typename Val>
 Blob<Val>::Blob(std::initializer_list<Val> il)
+<<<<<<< HEAD
         :value(std::make_shared(il))
+=======
+        :value(std::make_shared<std::vector<Val>>(il))
+>>>>>>> dev
 {}
 
 template<typename Val>
@@ -86,6 +96,15 @@ Blob<Val>::size() const noexcept
 }
 
 template<typename Val>
+<<<<<<< HEAD
+=======
+inline bool Blob<Val>::operator==(const Blob & that)
+{
+    return (*value) == (*that.value);
+}
+
+template<typename Val>
+>>>>>>> dev
 inline
 bool Blob<Val>::empty() const noexcept
 {
@@ -140,3 +159,36 @@ Blob<Val>& Blob<Val>::operator=(const Blob<Other> &that)
 {
     this->value = that.value;
 }
+<<<<<<< HEAD
+=======
+
+template<typename Val>
+bool Blob<Val>::operator!=(const Blob &that)
+{
+    return !(*this == that);
+}
+
+template<typename Val>
+inline bool Blob<Val>::operator<(const Blob<Val>& that)
+{
+    return (*value) < (*that.value);
+}
+
+template<typename Val>
+inline bool Blob<Val>::operator>(const Blob<Val>& that)
+{
+    return !(*this < that || *this == that);
+}
+
+template<typename Val>
+inline Val & Blob<Val>::operator[](size_t index)
+{
+    (*value)[index];
+}
+
+template<typename Val>
+inline const Val & Blob<Val>::operator[](size_t index) const
+{
+    return (*value)[index];
+}
+>>>>>>> dev

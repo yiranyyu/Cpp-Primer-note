@@ -33,8 +33,8 @@ StrVec::~StrVec()
     free();
 }
 
-pair<StrVec::pointer, StrVec::pointer> 
-StrVec::alloc_n_copy(const pointer _start, const pointer _end)
+pair<StrVec::pointer, StrVec::pointer>
+StrVec::alloc_n_copy(const const_pointer _start, const const_pointer _end)
 {
     pointer newStart = alloc.allocate(_end - _start);
     return { newStart, uninitialized_copy(_start, _end, newStart) };
@@ -115,6 +115,15 @@ StrVec& StrVec::operator=(StrVec that) & // only assign to lvalue
     return *this;
 }
 
+StrVec & StrVec::operator=(std::initializer_list<std::string> il) &
+{
+    auto data = alloc_n_copy(il.begin(), il.end());
+    free();
+    start = data.first;
+    first_free = cap = data.second;
+    return *this;
+}
+
 StrVec::value_type &StrVec::operator[](size_t index)
 {
     return start[index];
@@ -123,6 +132,25 @@ StrVec::value_type &StrVec::operator[](size_t index)
 const StrVec::value_type &StrVec::operator[](size_t index) const
 {
     return start[index];
+}
+
+bool StrVec::operator==(const StrVec &that)
+{
+    return this->size() == that.size() && sameContent(that);
+}
+
+bool StrVec::sameContent(const StrVec &that)
+{
+    auto cur = begin(), thatCur = that.begin(), end = this->end();
+    while (cur != end)
+        if (*cur++ != *thatCur++)
+            return false;
+    return true;
+}
+
+bool StrVec::operator!=(const StrVec &that)
+{
+    return !(*this == that);
 }
 
 void swap(StrVec &lhs, StrVec &rhs)

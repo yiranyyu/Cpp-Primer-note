@@ -1,44 +1,57 @@
 
+#include <iostream>
+#include <algorithm>
+#include <iterator>
+#include <fstream>
 #include "stdafx.h"
 #include "Sales_data.h"
-#include <iostream>
 #include "Blob.h"
+#include <functional>
 //#include <boost/filesystem.hpp>
 //#include <boost/type_index.hpp>
-#include <fstream>
 #include "TextQuery.h"
+#include "BlobPtr.h"
 using namespace std;
 
 void finished();
-class T{
-public:
-    T() { cout << "default" << endl; }
-    T(const T &that) { cout << "copy" << endl; }
-    T(T &&that) { cout << "move" << endl; }
-};
 
-class comp {
+class T {
+    static int ID;
 public:
-    comp(const T &_str, int _id):str(_str), id(_id){}
-    T str;
+    T() :id(ID++) { cout << "construct " << id << endl; }
+    T(const T &that) : id(ID++) { cout << "copy from " << that.id << " to construct " << id << endl; }
+    ~T() { cout << "destruct " << id << endl; }
+private:
     int id;
 };
 
-class TEST {
-public:
-    void f()const & { cout << "called" << endl; }
-};
-
-int operator+(int a, int b);
+int T::ID = 1;
 
 int main()
 {
-    comp cp(T(), 1);
-    comp cp2(cp);
-    comp cp3(std::move(cp));
-    cout << cp.id;
+    negate<int> n;
+    plus<int> add;
+    logical_and<int> and;
+    less<string*> lst;
 
-    TEST().f();
+    lst(new string, new string);
+
+    vector<string*> pointers;
+    for (int i = 0; i < 10; ++i)
+        pointers.push_back(new string(i, 's'));
+    
+    sort(pointers.begin(), pointers.end(), [](auto *ptr, auto *ptr2) {return ptr < ptr2; });
+
+    auto sum = n(add(1, 2));
+    cout << sum << endl;
+    {
+        T t1;
+        cout << "ctor lambda" << endl;
+        auto lam = [=] {auto c = t1; };
+
+        cout << "call" << endl;
+        lam();
+    }
 
     ifstream in("G:\\Code\\Algorithms note\\testfile\\tale.txt");
     finished();
@@ -47,6 +60,11 @@ int main()
 
 void finished()
 {
+<<<<<<< HEAD
     cout << endl << "program finished";
+=======
+    cout << endl;
+    getchar();
+>>>>>>> dev
     getchar();
 }
