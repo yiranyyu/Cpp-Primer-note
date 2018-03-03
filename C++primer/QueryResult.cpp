@@ -15,7 +15,7 @@ QueryResult::QueryResult(const TextQuery &content, const std::string &_word)
 
 std::ostream &operator<<(std::ostream &out, const QueryResult &result)
 {
-    if (result.lines->empty())
+    if (!result.lines)
     {
         out << "not found";
         return out;

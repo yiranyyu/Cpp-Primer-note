@@ -55,6 +55,12 @@ add_executable(C__primer
         C++primer/TextQuery.cpp
         C++primer/TextQuery.h
         C++primer/Blob.h
+        C++primer/Folder.h
+        C++primer/Folder.cpp
+        C++primer/Message.h
+        C++primer/Message.cpp
+        C++primer/StrVec.cpp
+        C++primer/StrVec.h
         "Note/Dynamic Memory.cpp"
         "Note/Defining Abstract Data Types.cpp" C++primer/BlobPtr.h)
 target_link_libraries (C__primer ${Boost_LIBRARIES})

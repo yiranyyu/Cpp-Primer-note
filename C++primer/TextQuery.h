@@ -7,6 +7,8 @@
 #include <memory>
 #include <iostream>
 #include <unordered_map>
+#include "StrVec.h"
+class QueryResult;
 class TextQuery
 {
     friend class QueryResult;
@@ -20,7 +22,7 @@ private:
     void mapLine(const std::string &line);
 
 private:
-    std::shared_ptr<std::vector<std::string>> pText;
+    std::shared_ptr<StrVec> pText;
     std::unordered_map<std::string, std::shared_ptr<std::set<size_t>>> wordMap;
 };
 void runQueries(std::istream &in);

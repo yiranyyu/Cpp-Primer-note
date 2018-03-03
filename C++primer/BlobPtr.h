@@ -20,10 +20,10 @@ public:
 
     Val& operator*();
     const Val& operator*()const;
-    auto& operator++() noexcept;
-    auto operator++(int);
-    auto& operator--() noexcept;
-    auto operator--(int);
+    BlobPtr& operator++() noexcept;
+    BlobPtr operator++(int);
+    BlobPtr& operator--() noexcept;
+    BlobPtr operator--(int);
 private:
     void checkIndex(const std::string &msg) const;
     std::weak_ptr<std::vector<Val>> data;
@@ -42,6 +42,7 @@ template<class Val>
 BlobPtr<Val>::BlobPtr(Blob<Val> &blob, size_t _index)
     :data(blob.value), index(_index)
 {
+    auto v = blob;
     checkIndex(INDEX_OUT_OF_RANGE);
 }
 
@@ -55,29 +56,29 @@ Val &BlobPtr<Val>::operator*()
 
 template<class Val>
 inline
-auto& BlobPtr<Val>::operator++() noexcept
+BlobPtr& BlobPtr<Val>::operator++() noexcept
 {
     ++index;
     return *this;
 }
 
 template<class Val>
-auto BlobPtr<Val>::operator++(int)
+BlobPtr BlobPtr<Val>::operator++(int)
 {
     auto temp = *this;
-    ++index;
+    ++(*this);
     return temp;
 }
 
 template<class Val>
-auto &BlobPtr<Val>::operator--() noexcept
+BlobPtr &BlobPtr<Val>::operator--() noexcept
 {
     --index;
     return *this;
 }
 
 template<class Val>
-auto BlobPtr<Val>::operator--(int)
+BlobPtr BlobPtr<Val>::operator--(int)
 {
     auto temp = *this;
     --(*this);

@@ -5,7 +5,7 @@
 using namespace std;
 
 TextQuery::TextQuery(std::istream &in)
-    :pText(make_shared<vector<string>>())
+    :pText(make_shared<StrVec>())
 {
     string line;
     while (getline(in, line))
@@ -17,11 +17,24 @@ TextQuery::TextQuery(std::istream &in)
 
 void TextQuery::mapLine(const std::string &line) 
 {
-    static auto findPunc = [](const string &word)->auto{
-        for (size_t i = 0; i < word.size(); ++i)
-            if (ispunct(word[i]))
-                return i;
-        return word.size();
+    static auto findRealWord = [](const string &word)->auto{
+
+        size_t first = 0, last = string::npos;
+        size_t i = 0;
+        for (; i < word.size(); ++i)
+            if (isalpha(word[i]))
+            {
+                first = i;
+                break;
+            }
+
+        for (; i < word.size(); ++i)
+            if (!isalpha(word[i]))
+            {
+                last = i;
+                break;
+            }
+        return make_pair(first, last);
     };
     static size_t curLine = 0;
 
@@ -29,7 +42,10 @@ void TextQuery::mapLine(const std::string &line)
     string word;
     while (in >> word)
     {
-        string realWord = word.substr(0, findPunc(word));
+        auto indices = findRealWord(word);
+        string realWord = word.substr(indices.first, indices.second);
+        for (auto &c : realWord)
+            c = static_cast<char>(tolower(c));
         if (wordMap.find(realWord) == wordMap.end())
             wordMap[realWord] = make_shared<set<size_t>>();
         wordMap[realWord]->insert(curLine);
@@ -51,6 +67,8 @@ void runQueries(std::istream &in)
         std::cout << "enter word to look for, or q to quit: ";
         if (!(std::cin >> q) || q == "q")
             break;
+        for (auto &c : q)
+            c = static_cast<char>(tolower(c));
         std::cout << tq.query(q) << std::endl;
     }
 }

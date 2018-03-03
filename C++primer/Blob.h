@@ -3,7 +3,9 @@
 #include <vector>
 #include <exception>
 #include <initializer_list>
-#include "BlobPtr.h"
+
+template <typename Val> class BlobPtr;
+
 template<typename Val>
 class Blob
 {
@@ -30,7 +32,8 @@ public:
     const_reference front() const;
     reference back();
     const_reference back() const;
-    void push_back(const value_type &item);
+    void push_back(const value_type &item)&;
+    void push_back(value_type &&item);
     void pop_back();
 private:
     void checkNotEmpty() const;
@@ -60,6 +63,18 @@ Blob<Val>::back() const
 {
     checkNotEmpty();
     return value->back();
+}
+
+template<typename Val>
+inline void Blob<Val>::push_back(const value_type & item)&
+{
+    value->push_back(item);
+}
+
+template<typename Val>
+inline void Blob<Val>::push_back(value_type && item)
+{
+    value->push_back(std::move(item));
 }
 
 template<typename Val>
@@ -109,13 +124,6 @@ Blob<Val>::front() const
 {
     checkNotEmpty();
     return value->front();
-}
-
-template<typename Val>
-inline
-void Blob<Val>::push_back(const Val &item)
-{
-    value->push_back(item);
 }
 
 template<typename Val>

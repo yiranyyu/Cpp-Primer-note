@@ -3,12 +3,13 @@
 #include <set>
 #include <iostream>
 #include <vector>
+#include "StrVec.h"
 class TextQuery;
 class QueryResult
 {
     friend std::ostream& operator<<(std::ostream &out, const QueryResult &result);
 private:
-    using text_type = std::vector<std::string>;
+    using text_type = StrVec;
 public:
     QueryResult(const TextQuery &content, const std::string &_word);
 
