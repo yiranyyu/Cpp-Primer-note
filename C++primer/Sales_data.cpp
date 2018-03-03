@@ -1,6 +1,7 @@
 #include <exception>
 #include "stdafx.h"
 #include "Sales_data.h"
+#include "IO_error.h"
 using namespace std;
 
 Sales_data::Sales_data() = default;
@@ -9,6 +10,13 @@ Sales_data::Sales_data(const std::string &_bookNo)
     :bookNo(_bookNo)
 {
     checkData();
+}
+
+Sales_data & Sales_data::operator=(const std::string & that)
+{
+    this->bookNo = that;
+    this->revenue = this->sold_number = 0;
+    return *this;
 }
 
 Sales_data::Sales_data(const std::string &_bookNo, unsigned _sold_number, double price)
@@ -56,7 +64,7 @@ Sales_data add(const Sales_data & lhs, const Sales_data & rhs)
     return temp.combine(rhs);
 }
 
-std::ostream & operator>>(std::ostream & os, const Sales_data & data)
+std::ostream & operator<<(std::ostream & os, const Sales_data & data)
 {
     return print(os, data);
 }
@@ -68,7 +76,7 @@ std::ostream & print(std::ostream & out, const Sales_data & data)
     return out;
 }
 
-std::istream & operator<<(std::istream & is, Sales_data & data)
+std::istream & operator>>(std::istream & is, Sales_data & data)
 {
     return read(is, data);
 }
@@ -77,7 +85,12 @@ std::istream & read(std::istream & in, Sales_data & data)
 {
     double price = 0.0;
     in >> data.bookNo >> data.sold_number >> price;
-    data.revenue = data.sold_number * price;
+    if (in)
+        data.revenue = data.sold_number * price;
+    else if (in.bad())
+        throw IO_error("fail to read data");
+    else
+        data = Sales_data();
     return in;
 }
 

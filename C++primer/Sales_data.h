@@ -7,6 +7,8 @@ public:
     Sales_data();
     explicit Sales_data(const std::string &_bookNo);
     explicit Sales_data(std::istream& in);
+    Sales_data& operator=(const Sales_data &that) = default;
+    Sales_data& operator=(const std::string &that);
     Sales_data(const std::string &_bookNo, unsigned _units_sold, double price);
     Sales_data(const Sales_data& that);
 
@@ -45,6 +47,6 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs);
 Sales_data operator+(const Sales_data &lhs, const Sales_data &rhs);
 std::istream& read(std::istream &in, Sales_data & data);
 std::ostream& print(std::ostream &out, const Sales_data &data);
-std::istream& operator<<(std::istream &is, Sales_data &data);
-std::ostream& operator>>(std::ostream &os, const Sales_data &data);
+std::istream& operator>>(std::istream &is, Sales_data &data);
+std::ostream& operator<<(std::ostream &os, const Sales_data &data);
 
