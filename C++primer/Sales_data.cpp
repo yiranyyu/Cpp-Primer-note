@@ -1,6 +1,6 @@
+#include <exception>
 #include "stdafx.h"
 #include "Sales_data.h"
-#include <exception>
 using namespace std;
 
 Sales_data::Sales_data() = default;
@@ -29,6 +29,12 @@ Sales_data::Sales_data(std::istream& in)
     checkData();
 }
 
+Sales_data& Sales_data::operator+=(const Sales_data &that)
+{
+    return combine(that);
+}
+
+
 Sales_data& Sales_data::combine(const Sales_data & that)
 {
     if (this->bookNo != that.bookNo) 
@@ -39,16 +45,20 @@ Sales_data& Sales_data::combine(const Sales_data & that)
     return *this;
 }
 
-double Sales_data::avg_price() const noexcept
+Sales_data operator+(const Sales_data & lhs, const Sales_data & rhs)
 {
-    if (sold_number == 0) return 0;
-    return revenue / sold_number;
+    return add(lhs, rhs);
 }
 
 Sales_data add(const Sales_data & lhs, const Sales_data & rhs)
 {
     Sales_data temp = lhs;
     return temp.combine(rhs);
+}
+
+std::ostream & operator>>(std::ostream & os, const Sales_data & data)
+{
+    return print(os, data);
 }
 
 std::ostream & print(std::ostream & out, const Sales_data & data)
@@ -58,6 +68,11 @@ std::ostream & print(std::ostream & out, const Sales_data & data)
     return out;
 }
 
+std::istream & operator<<(std::istream & is, Sales_data & data)
+{
+    return read(is, data);
+}
+
 std::istream & read(std::istream & in, Sales_data & data)
 {
     double price = 0.0;
@@ -65,7 +80,6 @@ std::istream & read(std::istream & in, Sales_data & data)
     data.revenue = data.sold_number * price;
     return in;
 }
-
 
 void Sales_data::checkData()
 {

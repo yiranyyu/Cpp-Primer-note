@@ -84,15 +84,19 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0\bin.v2;G:\Tools\boost_1_66_0\stage\lib;G:\Tools\boost_1_66_0</AdditionalIncludeDirectories>
+      <AdditionalOptions>/D _SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0\stage\lib;G:\Tools\boost_1_66_0\bin.v2</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -110,19 +114,21 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0\bin.v2;G:\Tools\boost_1_66_0\stage\lib;G:\Tools\boost_1_66_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0\stage\lib;G:\Tools\boost_1_66_0\bin.v2</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,25 +149,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="Blob.h" />
+    <ClInclude Include="BlobPtr.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="FileAnalysis.h" />
+    <ClInclude Include="Folder.h" />
+    <ClInclude Include="IO_error.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="QueryResult.h" />
     <ClInclude Include="Sales_data.h" />
     <ClInclude Include="Sales_item.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StrVec.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextQuery.h" />
     <ClInclude Include="Tools.h" />
+    <ClInclude Include="Window_mgr.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Account.cpp" />
     <ClCompile Include="C++primer.cpp" />
     <ClCompile Include="Chapter2_Sample.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="FileAnalysis.cpp" />
+    <ClCompile Include="Folder.cpp" />
+    <ClCompile Include="IO_error.cpp" />
+    <ClCompile Include="Message.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="QueryResult.cpp" />
     <ClCompile Include="Sales_data.cpp" />
     <ClCompile Include="Sales_item.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="SolutionChapter1.cpp" />
     <ClCompile Include="SolutionChapter2.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="StrVec.cpp" />
+    <ClCompile Include="TextQuery.cpp" />
     <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="Window_mgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="sales_data.txt" />
