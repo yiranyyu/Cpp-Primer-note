@@ -55,15 +55,6 @@ BlobPtr<Val>::BlobPtr(Blob<Val> &blob, size_t _index)
     :data(blob.value), index(_index)
 {
     auto v = blob;
-<<<<<<< HEAD
-    checkIndex(INDEX_OUT_OF_RANGE);
-}
-
-template<class Val>
-Val &BlobPtr<Val>::operator*()
-{
-    checkIndex(INDEX_OUT_OF_RANGE);
-=======
     checkIndex(index+1, INDEX_OUT_OF_RANGE);
 }
 
@@ -77,17 +68,11 @@ template<class Val>
 Val &BlobPtr<Val>::operator*() const
 {
     checkIndex(index, INDEX_OUT_OF_RANGE);
->>>>>>> dev
     auto ptr = data.lock();
     return (*ptr)[index];
 }
 
 template<class Val>
-<<<<<<< HEAD
-inline
-BlobPtr& BlobPtr<Val>::operator++() noexcept
-{
-=======
 inline Val* BlobPtr<Val>::operator->() const
 {
     return &(**this);
@@ -98,17 +83,12 @@ inline
 BlobPtr<Val>& BlobPtr<Val>::operator++()
 {
     checkIndex(index, "Cannot incre pointer at end");
->>>>>>> dev
     ++index;
     return *this;
 }
 
 template<class Val>
-<<<<<<< HEAD
-BlobPtr BlobPtr<Val>::operator++(int)
-=======
 BlobPtr<Val> BlobPtr<Val>::operator++(int)
->>>>>>> dev
 {
     auto temp = *this;
     ++(*this);
@@ -116,11 +96,6 @@ BlobPtr<Val> BlobPtr<Val>::operator++(int)
 }
 
 template<class Val>
-<<<<<<< HEAD
-BlobPtr &BlobPtr<Val>::operator--() noexcept
-{
-    --index;
-=======
 BlobPtr<Val>& BlobPtr<Val>::operator--()
 {
     --index;
@@ -133,16 +108,11 @@ BlobPtr<Val>& BlobPtr<Val>::operator--()
         ++index;
         throw;
     }
->>>>>>> dev
     return *this;
 }
 
 template<class Val>
-<<<<<<< HEAD
-BlobPtr BlobPtr<Val>::operator--(int)
-=======
 BlobPtr<Val> BlobPtr<Val>::operator--(int)
->>>>>>> dev
 {
     auto temp = *this;
     --(*this);
@@ -150,17 +120,6 @@ BlobPtr<Val> BlobPtr<Val>::operator--(int)
 }
 
 template<class Val>
-<<<<<<< HEAD
-const Val &BlobPtr<Val>::operator*() const
-{
-    checkIndex(INDEX_OUT_OF_RANGE);
-    auto ptr = data.lock();
-    return (*ptr)[index];
-}
-
-template<class Val>
-void BlobPtr<Val>::checkIndex(const std::string &msg) const
-=======
 inline int BlobPtr<Val>::operator-(const BlobPtr<Val>& that) const
 {
     checkSameContainer(that);
@@ -169,17 +128,10 @@ inline int BlobPtr<Val>::operator-(const BlobPtr<Val>& that) const
 
 template<class Val>
 void BlobPtr<Val>::checkIndex(size_t toCheck, const std::string &msg) const
->>>>>>> dev
 {
     auto ptr = data.lock();
     if (!ptr)
         throw std::runtime_error("unbound BlobPtr");
-<<<<<<< HEAD
-    if (index >= ptr->size())
-        throw std::out_of_range(msg);
-}
-
-=======
     if (toCheck >= ptr->size())
         throw std::out_of_range(msg);
 }
@@ -249,6 +201,5 @@ BlobPtr<Val>& BlobPtr<Val>::operator+=(size_t i)
     checkIndex(index+1, INDEX_OUT_OF_RANGE);
     return *this;
 }
->>>>>>> dev
 
 #endif //C_PRIMER_BLOBPTR_H

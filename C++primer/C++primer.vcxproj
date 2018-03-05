@@ -152,6 +152,8 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="Blob.h" />
     <ClInclude Include="BlobPtr.h" />
+    <ClInclude Include="BulkQuote.h" />
+    <ClInclude Include="BulkQuoteWithLimit.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="FileAnalysis.h" />
     <ClInclude Include="Folder.h" />
@@ -159,6 +161,7 @@
     <ClInclude Include="Message.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="QueryResult.h" />
+    <ClInclude Include="Quote.h" />
     <ClInclude Include="Sales_data.h" />
     <ClInclude Include="Sales_item.h" />
     <ClInclude Include="Screen.h" />
@@ -171,6 +174,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="BulkQuote.cpp" />
+    <ClCompile Include="BulkQuoteWithLimit.cpp" />
     <ClCompile Include="C++primer.cpp" />
     <ClCompile Include="Chapter2_Sample.cpp" />
     <ClCompile Include="Debug.cpp" />
@@ -180,6 +185,7 @@
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="QueryResult.cpp" />
+    <ClCompile Include="Quote.cpp" />
     <ClCompile Include="Sales_data.cpp" />
     <ClCompile Include="Sales_item.cpp" />
     <ClCompile Include="Screen.cpp" />

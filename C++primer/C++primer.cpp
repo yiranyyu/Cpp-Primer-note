@@ -15,44 +15,19 @@ using namespace std;
 
 void finished();
 
-class T {
-    static int ID;
+class B {
 public:
-    T() :id(ID++) { cout << "construct " << id << endl; }
-    T(const T &that) : id(ID++) { cout << "copy from " << that.id << " to construct " << id << endl; }
-    ~T() { cout << "destruct " << id << endl; }
-private:
-    int id;
+    virtual void f(){}
 };
 
-int T::ID = 1;
+class D1 : public B {
+public:
+    virtual int f(){}
+};
 
 int main()
 {
-    negate<int> n;
-    plus<int> add;
-    logical_and<int> and;
-    less<string*> lst;
-
-    lst(new string, new string);
-
-    vector<string*> pointers;
-    for (int i = 0; i < 10; ++i)
-        pointers.push_back(new string(i, 's'));
-    
-    sort(pointers.begin(), pointers.end(), [](auto *ptr, auto *ptr2) {return ptr < ptr2; });
-
-    auto sum = n(add(1, 2));
-    cout << sum << endl;
-    {
-        T t1;
-        cout << "ctor lambda" << endl;
-        auto lam = [=] {auto c = t1; };
-
-        cout << "call" << endl;
-        lam();
-    }
-
+    D1();
     ifstream in("G:\\Code\\Algorithms note\\testfile\\tale.txt");
     finished();
     return 0;
@@ -60,11 +35,6 @@ int main()
 
 void finished()
 {
-<<<<<<< HEAD
     cout << endl << "program finished";
-=======
-    cout << endl;
-    getchar();
->>>>>>> dev
     getchar();
 }

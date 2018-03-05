@@ -72,6 +72,15 @@
     <ClInclude Include="StrVec.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Quote.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BulkQuote.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BulkQuoteWithLimit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tools.cpp">
@@ -132,6 +141,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="StrVec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Quote.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BulkQuote.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BulkQuoteWithLimit.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

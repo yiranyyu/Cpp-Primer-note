@@ -54,11 +54,7 @@ inline Blob<Val>::Blob(const Blob<Other>& that)
 
 template<typename Val>
 Blob<Val>::Blob(std::initializer_list<Val> il)
-<<<<<<< HEAD
-        :value(std::make_shared(il))
-=======
         :value(std::make_shared<std::vector<Val>>(il))
->>>>>>> dev
 {}
 
 template<typename Val>
@@ -96,15 +92,12 @@ Blob<Val>::size() const noexcept
 }
 
 template<typename Val>
-<<<<<<< HEAD
-=======
 inline bool Blob<Val>::operator==(const Blob & that)
 {
     return (*value) == (*that.value);
 }
 
 template<typename Val>
->>>>>>> dev
 inline
 bool Blob<Val>::empty() const noexcept
 {
@@ -159,8 +152,6 @@ Blob<Val>& Blob<Val>::operator=(const Blob<Other> &that)
 {
     this->value = that.value;
 }
-<<<<<<< HEAD
-=======
 
 template<typename Val>
 bool Blob<Val>::operator!=(const Blob &that)
@@ -191,4 +182,3 @@ inline const Val & Blob<Val>::operator[](size_t index) const
 {
     return (*value)[index];
 }
->>>>>>> dev

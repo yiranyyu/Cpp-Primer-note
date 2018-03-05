@@ -97,12 +97,12 @@ StrVec::pointer StrVec::end()
     return first_free;
 }
 
-const StrVec::pointer StrVec::begin() const
+StrVec::const_pointer StrVec::begin() const
 {
     return start;
 }
 
-const StrVec::pointer StrVec::end() const
+StrVec::const_pointer StrVec::end() const
 {
     return first_free;
 }
@@ -134,12 +134,12 @@ const StrVec::value_type &StrVec::operator[](size_t index) const
     return start[index];
 }
 
-bool StrVec::operator==(const StrVec &that)
+bool StrVec::operator==(const StrVec &that) const
 {
     return this->size() == that.size() && sameContent(that);
 }
 
-bool StrVec::sameContent(const StrVec &that)
+bool StrVec::sameContent(const StrVec &that) const
 {
     auto cur = begin(), thatCur = that.begin(), end = this->end();
     while (cur != end)
@@ -148,7 +148,7 @@ bool StrVec::sameContent(const StrVec &that)
     return true;
 }
 
-bool StrVec::operator!=(const StrVec &that)
+bool StrVec::operator!=(const StrVec &that) const
 {
     return !(*this == that);
 }
