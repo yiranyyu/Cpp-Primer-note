@@ -26,3 +26,18 @@ std::ostream &operator<<(std::ostream &out, const QueryResult &result)
         cout << "  (line " << setw(6) << index << ") " << (*result.pText)[index] << endl;
     return out;
 }
+
+QueryResult::line_iter QueryResult::linesBegin() const
+{
+    return lines->cbegin();
+}
+
+QueryResult::line_iter QueryResult::linesEnd() const
+{
+    return lines->cend();
+}
+
+QueryResult::QueryResult(const shared_ptr<QueryResult::text_type> &_pText,
+                         const shared_ptr<set<QueryResult::line_type>> &_lines, const std::string &represent)
+    :pText(_pText), lines(_lines), word(represent)
+{}

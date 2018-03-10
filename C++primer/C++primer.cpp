@@ -11,20 +11,26 @@
 //#include <boost/type_index.hpp>
 #include "TextQuery.h"
 #include "BlobPtr.h"
-#include <boost\filesystem.hpp>
+//#include <boost\filesystem.hpp>
 #include <map>
 #include <unordered_map>
 #include <fstream>
 #include <sstream>
 #include "DiscountQuote.h"
+#include "BulkQuote.h"
+#include "BinaryQuery.h"
 using namespace std;
 void finished();
 
 int main()
 {
-    DiscountQuote quote;
+    Query query = Query("the") & Query("not") & ~Query("a");
+    ifstream file("G:\\Code\\Algorithms note\\testfile\\tale.txt");
+    cout << query.evaluate(TextQuery(file)) << endl;
+    finished();
     return 0;
 }
+
 void finished()
 {
     cout << endl << "program finished";

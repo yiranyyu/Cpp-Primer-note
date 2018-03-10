@@ -156,6 +156,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="AndQuery.h" />
+    <ClInclude Include="Basket.h" />
+    <ClInclude Include="BinaryQuery.h" />
     <ClInclude Include="Blob.h" />
     <ClInclude Include="BlobPtr.h" />
     <ClInclude Include="BulkQuote.h" />
@@ -166,21 +169,31 @@
     <ClInclude Include="Folder.h" />
     <ClInclude Include="IO_error.h" />
     <ClInclude Include="Message.h" />
+    <ClInclude Include="NotQuery.h" />
+    <ClInclude Include="OrQuery.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Query.h" />
     <ClInclude Include="QueryResult.h" />
+    <ClInclude Include="Query_base.h" />
     <ClInclude Include="Quote.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Sales_data.h" />
     <ClInclude Include="Sales_item.h" />
     <ClInclude Include="Screen.h" />
+    <ClInclude Include="Shape.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StrVec.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextQuery.h" />
     <ClInclude Include="Tools.h" />
     <ClInclude Include="Window_mgr.h" />
+    <ClInclude Include="WordQuery.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AndQuery.cpp" />
+    <ClCompile Include="Basket.cpp" />
+    <ClCompile Include="BinaryQuery.cpp" />
     <ClCompile Include="BulkQuote.cpp" />
     <ClCompile Include="BulkQuoteWithLimit.cpp" />
     <ClCompile Include="C++primer.cpp" />
@@ -191,12 +204,18 @@
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="IO_error.cpp" />
     <ClCompile Include="Message.cpp" />
+    <ClCompile Include="NotQuery.cpp" />
+    <ClCompile Include="OrQuery.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Query.cpp" />
     <ClCompile Include="QueryResult.cpp" />
+    <ClCompile Include="Query_base.cpp" />
     <ClCompile Include="Quote.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Sales_data.cpp" />
     <ClCompile Include="Sales_item.cpp" />
     <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SolutionChapter1.cpp" />
     <ClCompile Include="SolutionChapter2.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -204,9 +223,15 @@
     <ClCompile Include="TextQuery.cpp" />
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="Window_mgr.cpp" />
+    <ClCompile Include="WordQuery.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="sales_data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -53,12 +53,12 @@ void TextQuery::mapLine(const std::string &line)
     ++curLine;
 }
 
-QueryResult TextQuery::query(const std::string &word)
+QueryResult TextQuery::query(const std::string &word) const
 {
     return QueryResult(*this, word);
 }
 
-void runQueries(std::istream &in)
+void runtTextQueries(std::istream &in)
 {
     TextQuery tq(in);
     std::string q;

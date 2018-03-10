@@ -16,7 +16,7 @@ public:
     TextQuery(std::istream &in);
     ~TextQuery() = default;
 
-    QueryResult query(const std::string &word);
+    QueryResult query(const std::string &word) const;
 
 private:
     void mapLine(const std::string &line);
@@ -25,4 +25,4 @@ private:
     std::shared_ptr<StrVec> pText;
     std::unordered_map<std::string, std::shared_ptr<std::set<size_t>>> wordMap;
 };
-void runQueries(std::istream &in);
+void runtTextQueries(std::istream &in);

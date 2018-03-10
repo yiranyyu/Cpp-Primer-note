@@ -5,12 +5,13 @@ class BulkQuoteWithLimit :
 {
     using MyBase = BulkQuote;
 public:
-    BulkQuoteWithLimit();
     BulkQuoteWithLimit(const std::string &_bookNo, double price, std::size_t _min_pty,
                        double _discount, std::size_t _limit);
-    virtual ~BulkQuoteWithLimit();
-
+    
     virtual void debug() const noexcept override;
+    virtual BulkQuoteWithLimit* clone() const & override;
+    virtual BulkQuoteWithLimit* clone() && override;
+
 private:
     std::size_t limit;
 };

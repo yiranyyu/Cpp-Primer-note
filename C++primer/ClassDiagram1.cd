@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Base" Collapsed="true">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAAQAA=</HashCode>
+      <FileName>C++primer.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Derived" Collapsed="true">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C++primer.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Account" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAggAEAAACIAAAAAAAgAABAAAAAAAAAEA=</HashCode>
+      <FileName>Account.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Blob&lt;Val&gt;" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAEAABAAAAABAKEAAQACAAEAACAAAAEgAAAAAAA=</HashCode>
+      <FileName>Blob.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlobPtr&lt;Val&gt;" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAEAAAAAAAQAEAAwAAAAEAAAAAAAAwAAgRAAA=</HashCode>
+      <FileName>BlobPtr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulkQuote" Collapsed="true">
+    <Position X="1" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAAgEAAAAAA=</HashCode>
+      <FileName>BulkQuote.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulkQuoteWithLimit" Collapsed="true">
+    <Position X="1" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEABAAAA=</HashCode>
+      <FileName>BulkQuoteWithLimit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Debug" Collapsed="true">
+    <Position X="17.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACACEAAAAAAIAAEAABAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Debug.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscountQuote" Collapsed="true">
+    <Position X="1" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwEAIAAAA=</HashCode>
+      <FileName>DiscountQuote.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileAnalysis" Collapsed="true">
+    <Position X="10.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQKCAAAAAAIAAAAAAAAAAAAAAAAAAgAUAAAIAAAAAAA=</HashCode>
+      <FileName>FileAnalysis.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Folder" Collapsed="true">
+    <Position X="12.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAIAAAAAAEAQABAQAgAAQCBAA=</HashCode>
+      <FileName>Folder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IO_error" Collapsed="true">
+    <Position X="14.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABAAA=</HashCode>
+      <FileName>IO_error.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Message" Collapsed="true">
+    <Position X="16" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACgAAAQACAAAAEAABACAAAAAAAAAAAAQAgIAAAAAA=</HashCode>
+      <FileName>Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Person" Collapsed="true">
+    <Position X="17.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAIEAAAAAAAEAgAAAAA=</HashCode>
+      <FileName>Person.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QueryResult" Collapsed="true">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAIAAIAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>QueryResult.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quote" Collapsed="true">
+    <Position X="1" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAACAAAAQCBAAAAgAAAEAAAAAAgEAAAAAA=</HashCode>
+      <FileName>Quote.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sales_data" Collapsed="true">
+    <Position X="12.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAAAAAAAAAACAQABAQAAEACAAAAAAAAkAAgAAQA=</HashCode>
+      <FileName>Sales_data.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sales_item" Collapsed="true">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAgAAAAAABAQEBAAAAAAAAAAAggAAAAAQ=</HashCode>
+      <FileName>Sales_item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Screen" Collapsed="true">
+    <Position X="16" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAABAAAWARIYAQAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Screen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StrVec" Collapsed="true">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABggCAAAAAAAgDIcAAQAQCAEAAAAQIAAgAAAAAAA=</HashCode>
+      <FileName>StrVec.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextQuery" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIAAIAIQEAAAAA=</HashCode>
+      <FileName>TextQuery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tools" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Tools.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Window_mgr" Collapsed="true">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Window_mgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shape" Collapsed="true">
+    <Position X="6.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAIAAAABAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Shape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rectangle" Collapsed="true">
+    <Position X="6.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAQAQAIAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rectangle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Basket" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAiAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Basket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Query_base" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Query_base.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WordQuery" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>WordQuery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NotQuery" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>NotQuery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BinaryQuery" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>BinaryQuery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AndQuery" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>AndQuery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrQuery" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>OrQuery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="compare_Sales_item_with_ISBN" Collapsed="true">
+    <Position X="10.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sales_item.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="ty::D_float" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter2_Sample.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="ty::pD_float" Collapsed="true">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter2_Sample.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="ty::D_float_alias" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chapter2_Sample.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

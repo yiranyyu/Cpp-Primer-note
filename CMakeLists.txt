@@ -71,6 +71,24 @@ add_executable(C__primer
         C++primer/BulkQuote.cpp
         C++primer/BulkQuoteWithLimit.cpp
         C++primer/BulkQuoteWithLimit.h
+        C++primer/Query.h
+        C++primer/Query.cpp
+        C++primer/AndQuery.h
+        C++primer/AndQuery.cpp
+        C++primer/BinaryQuery.h
+        C++primer/BinaryQuery.cpp
+        C++primer/OrQuery.h
+        C++primer/OrQuery.cpp
+        C++primer/NotQuery.h
+        C++primer/NotQuery.cpp
+        C++primer/WordQuery.h
+        C++primer/WordQuery.cpp
+        C++primer/Query_base.h
+        C++primer/Query_base.cpp
+        C++primer/Shape.h
+        C++primer/Shape.cpp
+        C++primer/Rectangle.h
+        C++primer/Rectangle.cpp
         "Note/Dynamic Memory.cpp"
         "Note/Defining Abstract Data Types.cpp" C++primer/BlobPtr.h)
 target_link_libraries (C__primer ${Boost_LIBRARIES})
