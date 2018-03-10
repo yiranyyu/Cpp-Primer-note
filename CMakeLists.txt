@@ -65,8 +65,12 @@ add_executable(C__primer
         C++primer/StrVec.h
         C++primer/Quote.h
         C++primer/Quote.cpp
+        C++primer/DiscountQuote.cpp
+        C++primer/DiscountQuote.h
         C++primer/BulkQuote.h
         C++primer/BulkQuote.cpp
+        C++primer/BulkQuoteWithLimit.cpp
+        C++primer/BulkQuoteWithLimit.h
         "Note/Dynamic Memory.cpp"
         "Note/Defining Abstract Data Types.cpp" C++primer/BlobPtr.h)
 target_link_libraries (C__primer ${Boost_LIBRARIES})

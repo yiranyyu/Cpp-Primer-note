@@ -1,17 +1,13 @@
 #pragma once
-#include "Quote.h"
+#include "DiscountQuote.h"
 class BulkQuote :
-    public Quote
+    public DiscountQuote
 {
-    using MyBase = Quote;
+    using MyBase = DiscountQuote;
 public:
     BulkQuote();
-    virtual ~BulkQuote();
     BulkQuote(const std::string &_bookNo, double price, std::size_t _min_pty, double _discount);
+    virtual ~BulkQuote();
     virtual double netPrice(std::size_t amount) const override;
-    virtual void debug() const noexcept override;
-private:
-    std::size_t min_qty = 0;
-    double discount = 0.0;
 };
 

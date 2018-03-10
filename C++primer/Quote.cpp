@@ -16,7 +16,7 @@ Quote::Quote(const std::string & book, double salesPrice)
 
 Quote::~Quote() = default;
 
-double Quote::netPrice(std::size_t n) const
+double Quote::netPrice(std::size_t n) const noexcept
 {
     return n * price;
 }

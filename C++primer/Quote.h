@@ -7,7 +7,7 @@ public:
     Quote(const std::string &book, double salesPrice);
     virtual ~Quote();
 
-    virtual double netPrice(std::size_t n)const;
+    virtual double netPrice(std::size_t n)const noexcept;
     virtual void debug() const noexcept;
 private:
     std::string bookNo;

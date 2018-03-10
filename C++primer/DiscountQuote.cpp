@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <iostream>
 #include "DiscountQuote.h"
 using namespace std;
 
@@ -12,5 +13,10 @@ DiscountQuote::DiscountQuote(const std::string & _bookNo, double price, std::siz
         throw runtime_error("discount must be in range [0.0, 1.0] but found discount = " + to_string(discount));
 }
 
-
 DiscountQuote::~DiscountQuote() = default;
+
+void DiscountQuote::debug()const noexcept
+{
+    MyBase::debug();
+    cout << "min quantity: " << quantity << " discount: " << discount;
+}

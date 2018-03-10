@@ -101,15 +101,19 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Tools\boost_1_66_0\;G:\Tools\boost_1_66_0\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/D _SCL_SECURE_NO_WARNINGS 
+ %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>G:\Tools\boost_1_66_0\stage\lib\;G:\Tools\boost_1_66_0\boost;G:\Tools\boost_1_66_0\bin.v2;G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,19 +137,21 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Tools\boost_1_66_0\;G:\Tools\boost_1_66_0\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>G:\Tools\boost_1_66_0\stage\lib\;G:\Tools\boost_1_66_0\boost;G:\Tools\boost_1_66_0\bin.v2;G:\Tools\boost_1_66_0\libs;G:\Tools\boost_1_66_0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -155,6 +161,7 @@
     <ClInclude Include="BulkQuote.h" />
     <ClInclude Include="BulkQuoteWithLimit.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="DiscountQuote.h" />
     <ClInclude Include="FileAnalysis.h" />
     <ClInclude Include="Folder.h" />
     <ClInclude Include="IO_error.h" />
@@ -179,6 +186,7 @@
     <ClCompile Include="C++primer.cpp" />
     <ClCompile Include="Chapter2_Sample.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="DiscountQuote.cpp" />
     <ClCompile Include="FileAnalysis.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="IO_error.cpp" />

@@ -11,28 +11,20 @@
 //#include <boost/type_index.hpp>
 #include "TextQuery.h"
 #include "BlobPtr.h"
+#include <boost\filesystem.hpp>
+#include <map>
+#include <unordered_map>
+#include <fstream>
+#include <sstream>
+#include "DiscountQuote.h"
 using namespace std;
-
 void finished();
-
-class B {
-public:
-    virtual void f(){}
-};
-
-class D1 : public B {
-public:
-    virtual int f(){}
-};
 
 int main()
 {
-    D1();
-    ifstream in("G:\\Code\\Algorithms note\\testfile\\tale.txt");
-    finished();
+    DiscountQuote quote;
     return 0;
 }
-
 void finished()
 {
     cout << endl << "program finished";
