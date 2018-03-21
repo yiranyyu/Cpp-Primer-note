@@ -114,6 +114,15 @@
     <ClInclude Include="Query.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DebugDeleter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ty_shared_ptr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ty_unique_ptr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tools.cpp">
@@ -216,6 +225,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Query.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDeleter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ty_shared_ptr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ty_unique_ptr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,11 +19,18 @@ public:
     using size_type = typename std::vector<value_type>::size_type;
 public:
     Blob();
+
     template <typename Other>
     Blob(const Blob<Other> &that);
+
     template <typename Other>
     Blob& operator=(const Blob<Other> &that);
+
     Blob(std::initializer_list<Val> il);
+
+    template <typename InputIterator>
+    Blob(InputIterator begin, InputIterator end);
+
     ~Blob() = default;
 
     bool operator==(const Blob<Val> &that);
@@ -60,6 +67,12 @@ Blob<Val>::Blob(std::initializer_list<Val> il)
 template<typename Val>
 Blob<Val>::Blob()
     :value(std::make_shared<std::vector<Val>>())
+{}
+
+template <typename Val>
+template <typename InputIterator>
+Blob<Val>::Blob(InputIterator begin, InputIterator end)
+    :value(std::make_shared<std::vector<VAl>>(begin, end))
 {}
 
 template<typename Val>

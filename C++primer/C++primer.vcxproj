@@ -164,6 +164,7 @@
     <ClInclude Include="BulkQuote.h" />
     <ClInclude Include="BulkQuoteWithLimit.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="DebugDeleter.h" />
     <ClInclude Include="DiscountQuote.h" />
     <ClInclude Include="FileAnalysis.h" />
     <ClInclude Include="Folder.h" />
@@ -186,6 +187,8 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextQuery.h" />
     <ClInclude Include="Tools.h" />
+    <ClInclude Include="ty_shared_ptr.h" />
+    <ClInclude Include="ty_unique_ptr.h" />
     <ClInclude Include="Window_mgr.h" />
     <ClInclude Include="WordQuery.h" />
   </ItemGroup>
@@ -199,6 +202,7 @@
     <ClCompile Include="C++primer.cpp" />
     <ClCompile Include="Chapter2_Sample.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="DebugDeleter.cpp" />
     <ClCompile Include="DiscountQuote.cpp" />
     <ClCompile Include="FileAnalysis.cpp" />
     <ClCompile Include="Folder.cpp" />
@@ -222,6 +226,8 @@
     <ClCompile Include="StrVec.cpp" />
     <ClCompile Include="TextQuery.cpp" />
     <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="ty_shared_ptr.cpp" />
+    <ClCompile Include="ty_unique_ptr.cpp" />
     <ClCompile Include="Window_mgr.cpp" />
     <ClCompile Include="WordQuery.cpp" />
   </ItemGroup>

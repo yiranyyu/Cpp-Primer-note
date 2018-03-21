@@ -2,7 +2,7 @@
 
 * Managing the Output Buffer
   + flush manipulator flushes the stream
-  + ends manipulator inserts a null character into the buffer and then flushes the stream 
+  + ends manipulator inserts a null character into the buffer and then flushes the stream
   + Use the unitbuf manipulator if we want to flush after every output.
   + Use the nounitbuf manipulator restores the stream to use normal, system-managed buffer flushing.
   + Output buffers are not flushed if program terminates abnormally.

@@ -104,7 +104,7 @@ public:
     int v1, v2;
 };
 
-class InheritConstructor : public Constructor 
+class InheritConstructor : public Constructor
 {
     using Constructor::Constructor;
 
