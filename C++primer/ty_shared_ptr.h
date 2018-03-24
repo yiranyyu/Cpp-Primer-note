@@ -1,5 +1,5 @@
 #pragma once
-
+#include <functional>
 template<typename Resource>
 struct ReferenceCountBase
 {
@@ -147,4 +147,10 @@ ty_shared_ptr<T>::ty_shared_ptr(const ty_shared_ptr<Other> &that)
     :ptr(that.ptr), ref_count(that.ref_count)
 {
     ref_count->count += 1;
+}
+
+template <typename T, typename... Args>
+ty_shared_ptr<T> make_shared(Args&&... args)
+{
+    return ty_shared_ptr(new T(std::forward<Args>(args)...));
 }

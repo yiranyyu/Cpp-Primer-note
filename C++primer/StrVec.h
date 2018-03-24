@@ -24,8 +24,13 @@ public:
     bool operator>(const StrVec &that) const;
     size_t size()const noexcept;
     size_t capacity() const noexcept;
+    
     void push_back(const value_type &val);
     void push_back(value_type &&val);
+
+    template <typename... Args>
+    void emplace_back(Args&&... paras);
+
     pointer begin();
     pointer end();
     const_pointer begin() const;
@@ -78,4 +83,11 @@ inline
 size_t StrVec::capacity() const noexcept
 {
     return cap - start;
+}
+
+template <typename... Args>
+void StrVec::emplace_back(Args&&... paras)
+{
+    check_n_alloc();
+    alloc.construct(first_free++, paras);
 }
