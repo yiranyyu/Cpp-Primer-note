@@ -89,5 +89,5 @@ template <typename... Args>
 void StrVec::emplace_back(Args&&... paras)
 {
     check_n_alloc();
-    alloc.construct(first_free++, paras);
+    alloc.construct(first_free++, paras...);
 }

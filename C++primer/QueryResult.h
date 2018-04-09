@@ -8,11 +8,12 @@ class TextQuery;
 class QueryResult
 {
     friend std::ostream& operator<<(std::ostream &out, const QueryResult &result);
-private:
-    using text_type = StrVec;
 public:
+    using text_type = StrVec;
     using line_type = size_t;
     using line_iter = std::set<line_type>::const_iterator;
+
+public:
     QueryResult(const TextQuery &content, const std::string &_word);
     QueryResult(const std::shared_ptr<text_type> &_pText, const std::shared_ptr<std::set<line_type>> &lines, const std::string &represent);
     const std::shared_ptr<text_type>& getText()const noexcept;

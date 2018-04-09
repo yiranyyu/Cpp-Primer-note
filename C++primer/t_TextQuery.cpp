@@ -1,11 +1,16 @@
-#include "TextQuery.h"
+//
+// Created by yirany on 2018/4/4.
+//
+#include "t_TextQuery.h"
 #include <iostream>
 #include <sstream>
-#include "QueryResult.h"
+#include <iomanip>
+#include <memory>
+
 using namespace std;
 
-TextQuery::TextQuery(std::istream &in)
-    :pText(make_shared<StrVec>())
+t_TextQuery::t_TextQuery(std::istream &in)
+        :pText(make_shared<StrVec>())
 {
     string line;
     while (getline(in, line))
@@ -15,7 +20,7 @@ TextQuery::TextQuery(std::istream &in)
     }
 }
 
-void TextQuery::mapLine(const std::string &line) 
+void t_TextQuery::mapLine(const std::string &line)
 {
     static auto findRealWord = [](const string &word)->auto{
 
@@ -53,14 +58,36 @@ void TextQuery::mapLine(const std::string &line)
     ++curLine;
 }
 
-QueryResult TextQuery::query(const std::string &word) const
+t_TextQuery::QueryResult t_TextQuery::query(const std::string &word) const
 {
-    return QueryResult(*this, word);
+    auto iter = wordMap.find(word);
+    decltype(wordMap)::value_type::second_type lines;
+    if (iter != wordMap.end())
+        lines = iter->second;
+    return {pText, lines, word};
 }
 
-void runTextQueries(std::istream &in)
+std::ostream& operator<<(std::ostream &out, const t_TextQuery::QueryResult &result)
 {
-    TextQuery tq(in);
+    if (!get<1>(result))
+    {
+        out << "not found";
+        return out;
+    }
+
+    auto pText = get<0>(result);
+    auto lines = get<1>(result);
+    auto &word = get<2>(result);
+    out << word << " occurs " << lines->size()
+        << (lines->size() > 1 ? " times" : " time") << endl;
+    for (const auto &index : *lines)
+        cout << "  (line " << setw(6) << index << ") " << (*pText)[index] << endl;
+    return out;
+}
+
+void run_t_TextQuery(std::istream &in)
+{
+    t_TextQuery tq(in);
     std::string q;
     while (true)
     {

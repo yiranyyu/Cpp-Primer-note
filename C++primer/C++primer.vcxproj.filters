@@ -123,6 +123,9 @@
     <ClInclude Include="ty_unique_ptr.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="t_TextQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tools.cpp">
@@ -234,6 +237,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ty_unique_ptr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="t_TextQuery.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

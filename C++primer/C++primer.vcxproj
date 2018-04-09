@@ -189,6 +189,7 @@
     <ClInclude Include="Tools.h" />
     <ClInclude Include="ty_shared_ptr.h" />
     <ClInclude Include="ty_unique_ptr.h" />
+    <ClInclude Include="t_TextQuery.h" />
     <ClInclude Include="Window_mgr.h" />
     <ClInclude Include="WordQuery.h" />
   </ItemGroup>
@@ -228,6 +229,7 @@
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="ty_shared_ptr.cpp" />
     <ClCompile Include="ty_unique_ptr.cpp" />
+    <ClCompile Include="t_TextQuery.cpp" />
     <ClCompile Include="Window_mgr.cpp" />
     <ClCompile Include="WordQuery.cpp" />
   </ItemGroup>

@@ -28,8 +28,8 @@ public:
     pos size() const noexcept;
 private:
     pos cursor = 0;
-    pos height = 0;
-    pos width = 0;
+    pos m_height = 0;
+    pos m_width = 0;
     std::string contents;
     mutable size_t access_ctr = 0U;
 private:
@@ -39,12 +39,12 @@ private:
 
 template <size_t _width, size_t _height>
 Screen<_width, _height>::Screen()
-    :height(_height), width(_width), contents(_height * _width, ' ')
+    :m_height(_height), m_width(_width), contents(_height * _width, ' ')
 {}
 
 template <size_t _width, size_t _height>
 Screen<_width, _height>::Screen(char c)
-    : height(_height), width(_width), contents(_height * _width, c)
+    : m_height(_height), m_width(_width), contents(_height * _width, c)
 {}
 
 template <size_t width, size_t height>

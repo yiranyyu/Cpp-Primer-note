@@ -89,6 +89,9 @@ add_executable(C__primer
         C++primer/Shape.cpp
         C++primer/Rectangle.h
         C++primer/Rectangle.cpp
-        "Note/Dynamic Memory.cpp"
-        "Note/Defining Abstract Data Types.cpp" C++primer/BlobPtr.h)
+        C++primer/BlobPtr.h
+        C++primer/ty_shared_ptr.h
+        C++primer/ty_shared_ptr.cpp
+        C++primer/ty_unique_ptr.h
+        C++primer/ty_unique_ptr.cpp C++primer/t_TextQuery.cpp C++primer/t_TextQuery.h)
 target_link_libraries (C__primer ${Boost_LIBRARIES})

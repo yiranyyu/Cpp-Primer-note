@@ -29,7 +29,7 @@ struct ReferenceCountWithDeleter: public ReferenceCountBase<Resource>
 
     virtual void decreReference(Resource *ptr)
     {
-        if (--count == 0)
+        if (--Mybase::count == 0)
             initialized ? deleter(ptr) : delete ptr;
     }
 };
@@ -110,8 +110,8 @@ ty_shared_ptr<T>& ty_shared_ptr<T>::operator=(const ty_shared_ptr & that)
     ref_count->decreReference(ptr);
     if (ref_count->count == 0)
         delete ref_count;
-    this.ptr = that.ptr;
-    this.ref_count = that.ref_count;
+    this->ptr = that.ptr;
+    this->ref_count = that.ref_count;
     return *this;
 }
 
@@ -152,5 +152,5 @@ ty_shared_ptr<T>::ty_shared_ptr(const ty_shared_ptr<Other> &that)
 template <typename T, typename... Args>
 ty_shared_ptr<T> make_shared(Args&&... args)
 {
-    return ty_shared_ptr(new T(std::forward<Args>(args)...));
+    return ty_shared_ptr<T>(new T(std::forward<Args>(args)...));
 }

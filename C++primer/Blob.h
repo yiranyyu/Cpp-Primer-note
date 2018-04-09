@@ -72,7 +72,7 @@ Blob<Val>::Blob()
 template <typename Val>
 template <typename InputIterator>
 Blob<Val>::Blob(InputIterator begin, InputIterator end)
-    :value(std::make_shared<std::vector<VAl>>(begin, end))
+    :value(std::make_shared<std::vector<Val>>(begin, end))
 {}
 
 template<typename Val>
