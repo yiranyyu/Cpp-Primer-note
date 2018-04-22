@@ -524,7 +524,7 @@ flip1(f, j, 42); // f called through flip1 leaves j unchanged (since t1 is passe
 To pass a reference through our flip function, we need to preserve the "lvalueness" of its given argument and `const`ness of the argument as well.
 
 ```C++
-// keep the lvalueness and constness of 
+// keep the lvalueness and constness of
 // argument passed to t1 and t2
 template <typename Func, typename T1, typename T2>
 void flip2(Func f, T1 &&t1, T2 &&t2)
@@ -596,7 +596,7 @@ template <typename T> string debug_rep(const T &t)
 Next, we'll define a version of `debug_rep` to print pointers:
 
 ```C++
-// print pointers as their pointer value, followed by the object to which 
+// print pointers as their pointer value, followed by the object to which
 // the pointer points
 // NB: this function will not work properly with char*(because the IO libray
 // defines a version of the << for char* values)
@@ -691,7 +691,7 @@ Both templates provide an exact match to the argument (array to pointer conversi
 If we want to handle character pointers as strings, we can define two more nontemplate overloads:
 
 ```C++
-// convert the character pointers to string and call the string 
+// convert the character pointers to string and call the string
 // version of debug_rep
 string debug_rep(char *str)
 {

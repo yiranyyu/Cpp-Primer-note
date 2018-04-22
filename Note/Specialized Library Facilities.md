@@ -247,7 +247,6 @@ if (regex_search(filename, results, r))
 * `length()`: The size of this match. Return 0 if `matched` is false
 * `str()`: Return a `string` containing the matched portion of the input. Return an empty string if `matched` is false
 
-
 ### Using `regex_replace`
 
 When we want to find and replace a regular expression in the input sequence, we call `regex_replace`. We compose a replacement string by including the characters we want, intermixed with *subexpressions* from the matched substring:

@@ -3,25 +3,23 @@
 //#include <boost/filesystem.hpp>
 //#include <boost/type_index.hpp>
 #include <iostream>
-#include <bitset>
-#include <regex>
-using namespace std;
+
+class B1{public: virtual void print(){std::cout << "B1" << std::endl;}};
+class B2{public: virtual void print(){std::cout << "B2" << std::endl;}};
+class D1:public B1{};
+class D2:public B2{};
+
+class MI:public D1, public D2{};
+
+class MDirect: public B1, public B2{};
+
+class B{public: virtual void print(){std::cout << "B" << std::endl;}};
+class D:public B{};
 
 int main()
 {
-    // find the characters ei that follows a character other than c
-    string pattern("[^c]ei");
-
-    // we want the whole word in which our pattern appears
-    pattern = "([[:alpha:]]*" + pattern + "[[:alpha:]]*)([[:digit:]])*";
-
-    regex r(pattern);       // construct a regex to find pattern
-    string fmt2 = "$2#";
-
-    string s = "dfei2 k freigh4";
-
-    // tell regex_replace to copy only the text that it replaces
-    cout << regex_replace(s, r, fmt2) << endl;
-    getchar();
+    B1 *pb1 = new MDirect;
+    pb1->print();
+    MI().print();
     return 0;
 }
