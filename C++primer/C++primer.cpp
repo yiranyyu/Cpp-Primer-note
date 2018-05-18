@@ -3,23 +3,22 @@
 //#include <boost/filesystem.hpp>
 //#include <boost/type_index.hpp>
 #include <iostream>
+using namespace std;
 
-class B1{public: virtual void print(){std::cout << "B1" << std::endl;}};
-class B2{public: virtual void print(){std::cout << "B2" << std::endl;}};
-class D1:public B1{};
-class D2:public B2{};
 
-class MI:public D1, public D2{};
 
-class MDirect: public B1, public B2{};
-
-class B{public: virtual void print(){std::cout << "B" << std::endl;}};
-class D:public B{};
+class outter
+{
+public:
+    class pub{public: int i; void f();};
+private:
+    class pri{public: int i;};
+protected:
+    class pro{public: int i;};
+};
 
 int main()
 {
-    B1 *pb1 = new MDirect;
-    pb1->print();
-    MI().print();
+    cout << sizeof(string) << endl;
     return 0;
 }

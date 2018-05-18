@@ -569,5 +569,3 @@ ostringstream::pos_type mark = writeStr.tellp();
 if (cancelEntry)
     writeStr.seekp(mark);   // return to the remembered position
 ```
-
-#### Reading and Writing to the Same File

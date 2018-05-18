@@ -15,11 +15,11 @@
   + As a rule, we can avoid potential problem with captures by minimizing the data we capture. Moreover, if possible, avoid capturing pointers or references.
   + use = (by value) or & (by ref) to use implicit captures
   + When mix implicit and explicit captures, the first item in the capture list must be an & or =. The explicit vars must use the alternate form.
-  + Can’t capture this by reference
+  + Can't capture this by reference
   + By default, a lambda may not change the value of a variable that it copies by value. If we want to do that, follow the parameter list with the keyword mutable. (e.g. [ ] (int val) mutable -> int {return val * val;})
   + Lambdas that are mutable may not omit the parameter list.
 5. Binding Arguments
-+ We can’t use bind directly to replace captures of reference, because bind copies its arguments and we cannot copy an ostream.
++ We can't use bind directly to replace captures of reference, because bind copies its arguments and we cannot copy an ostream.
 + If we want to pass an obj to bind without copying it, we must use the library ref function, which returns an object that contains the given reference and that is itself copyable.
 + There is also a cref function that generates a class that holds a reference to const.
 6. When we create an istream_iterator, we can bind it to a stream. Alternatively, we can default initialize the iterator, which creates an iterator that we can use as the off-the-end value.
@@ -36,7 +36,7 @@ while (int_iter != eof) // same as while(cin >> $val$)
 vector<int> vec(int_iter, eof);
 ```
 
-7. Call the reverse_iterator’s base member, which gives us its corresponding ordinary iterator (which points to the position after the position reverse_iterator points).
+7. Call the reverse_iterator's base member, which gives us its corresponding ordinary iterator (which points to the position after the position reverse_iterator points).
 8. The fact that reverse iterators are intended to represent ranges and that these ranges are asymmetric has an important consequence: When we initialize or assign a reverse iterator from a plain iterator, the resulting iterator does not refer to the same element as the original.
 
 ```C++
@@ -56,7 +56,7 @@ auto iter = r_iter.base();
 10. Output iterator. Like input iterators, output iterators may be used only for single-pass algorithms.
 11. Container-Specific Algorithms
 + Unlike the other containers, list and forward_list define several algorithms as members. In particular, the list types define their own versions of sort, merge, remove, reverse, and unique.
-+ A list can “swap” its elements by changing the links among it’s elements rather than swapping the value of those elements. As a result, the list-specific versions of these algorithms can achieve much better performance than the corresponding generic versions.
++ A list can “swap” its elements by changing the links among it's elements rather than swapping the value of those elements. As a result, the list-specific versions of these algorithms can achieve much better performance than the corresponding generic versions.
 + The list member versions should be used in preference to the generic algorithms for lists and forward_lists
 + list versions of algorithms change the underlying container.
 + For example, the list version of remove removes the indicated elements. The list version of unique removes the second and subsequent duplicate elements.
